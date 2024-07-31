@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14.2
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mymoney
+    networks:
+      - mymoney-network
+
+  server:
+    image: nginx:1.27.0
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./:/var/www/html
+    networks:
+      - mymoney-network
+
+  php:
+    build: .
+    container_name: php-fpm
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - mymoney-network
+
+networks:
+  mymoney-network:
+    driver: bridge
