@@ -10,6 +10,17 @@ export default {
         './resources/**/*.vue',
     ],
     theme: {
+        colors: {
+            baseBlue: '#417FBB',       // Main color (R65 G127 B187)
+            lightBlue: '#82AFD6',      // Lighter shade
+            darkBlue: '#204C70',       // Darker shade
+            complementaryOrange: '#BB7D41', // Complementary color
+            coolBlue: '#416BBB',       // Analogous cool blue
+            teal: '#41BB9B',           // Analogous teal
+            neutralGray: '#C8C8C8',   // Neutral gray
+            white: '#FFFFFF', // White
+            black: '#000000'
+        },
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
