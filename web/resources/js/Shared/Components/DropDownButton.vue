@@ -1,15 +1,15 @@
 <template>
-    <div class="text-left bg-lightBlue rounded-sm">
+    <div class="text-left text-white font-bold bg-lightBlue rounded-sm">
       <button
         @click="toggleDropdown"
-        class="text-white bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 w-32 h-10"
+        class="bg-blue-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 w-32 h-10"
       >
         {{ selectedOption || title }}
       </button>
 
       <div
         v-show="isOpen"
-        class="bg-white border border-gray-300 rounded-md shadow-lg"
+        class="bg-lightBlue border border-gray-300 rounded-md shadow-lg"
       >
         <a
           href="#"
